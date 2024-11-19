@@ -11,8 +11,10 @@ public class ScoreKeeper : MonoBehaviour
     const int DEFAULT_POINTS = 1;
     const int SCORE_THRESHOLD = 15;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI totalScoreText;
+    [SerializeField] TextMeshProUGUI shotsFiredText;
     [SerializeField] TextMeshProUGUI levelText;
-    [SerializeField] int level;
+    [SerializeField] int level = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,8 @@ public class ScoreKeeper : MonoBehaviour
         level = SceneManager.GetActiveScene().buildIndex;
         DisplayScore();
         DisplayLevel();
+        DisplayTotalScore();
+        DisplayShotsFired();
     }
 
     public void AddPoints()
@@ -31,6 +35,8 @@ public class ScoreKeeper : MonoBehaviour
     {
         score += value;
         DisplayScore();
+        PersistentData.Instance.AddTotalScore(value);
+        DisplayTotalScore();
         if (score >= SCORE_THRESHOLD)
             AdvanceLevel();
     }
@@ -38,7 +44,7 @@ public class ScoreKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        DisplayShotsFired();
     }
 
     private void DisplayScore()
@@ -46,9 +52,19 @@ public class ScoreKeeper : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
+    private void DisplayTotalScore()
+    {
+        totalScoreText.text = "Total Score: " + PersistentData.Instance.GetTotalScore();
+    }
+
+    private void DisplayShotsFired()
+    {
+        shotsFiredText.text = "Shots Fired: " + PersistentData.Instance.GetShotsFired();
+    }
+
     private void DisplayLevel()
     {
-        levelText.text = "Level: " + (level+1);
+        levelText.text = "Level: " + (level);
     }
 
     private void AdvanceLevel()
