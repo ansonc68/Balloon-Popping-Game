@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Moving : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class Moving : MonoBehaviour
         if (transform.localScale.x >= 1.2f) // Adjust size limit as needed
         {
             Destroy(gameObject); // Balloon disappears
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Restart the current scene
         }
     }
 }

@@ -1386,8 +1386,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -148}
-  m_SizeDelta: {x: 115.0344, y: 20.0077}
+  m_AnchoredPosition: {x: 0, y: -181.6861}
+  m_SizeDelta: {x: 115.0344, y: 23.9846}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &752445121
 MonoBehaviour:
@@ -1599,7 +1599,15 @@ MonoBehaviour:
     you get.
 
 
-    DON''T shoot the bombs or you restart the level
+    If the apples get too big, they pop and level restarts
+
+
+    DON''T
+    shoot the bombs or you restart the level
+
+
+    Further the level, more bombs
+    there are
 
 '
   m_isRightToLeft: 0
@@ -1628,8 +1636,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23
-  m_fontSizeBase: 23
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2661,8 +2669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000088215, y: 0.0000014305}
-  m_SizeDelta: {x: 381.2525, y: 350.6816}
+  m_AnchoredPosition: {x: -0.0000088215, y: 6.2826}
+  m_SizeDelta: {x: 381.2525, y: 448.0968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1636692710
 GameObject:
